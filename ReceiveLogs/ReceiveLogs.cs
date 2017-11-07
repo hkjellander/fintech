@@ -14,9 +14,7 @@ class ReceiveLogs
             return 1;
         }
         var id = args[0];
-        var factory = new ConnectionFactory() { 
-            HostName = "localhost",
-        };
+        var factory = new ConnectionFactory() { HostName = "localhost" };
 
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())

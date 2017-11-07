@@ -9,4 +9,7 @@
     <PackageReference Include="RabbitMQ.Client" Version="5.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="DbExport.cs" />
+  </ItemGroup>
 </Project>
