@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DbLogStorage
 {
@@ -27,6 +28,7 @@ namespace DbLogStorage
     public class LogEntry
     {
         public int Id { get; set; }
+        [Required]
         public string Json { get; set; }
     }
 }
