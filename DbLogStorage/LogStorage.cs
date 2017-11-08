@@ -11,6 +11,7 @@ namespace DbLogStorage
         public LogStorage(LogContext context)
         {
             this.context = context;
+            context.Database.EnsureCreated();
         }
 
         public void Add(LogEntry logEntry)
