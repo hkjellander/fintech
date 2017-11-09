@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace DbLogStorage
+namespace Archive.Api.Models
 {
     public class LogContext : DbContext
     {
@@ -14,7 +14,7 @@ namespace DbLogStorage
             : base(options)
         { }
 
-        public DbSet<LogEntry> Logs { get; set; }
+        public virtual DbSet<LogEntry> Logs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -23,12 +23,5 @@ namespace DbLogStorage
                 optionsBuilder.UseSqlite("Data Source=logs.sqlite");
             }
         }
-    }
-
-    public class LogEntry
-    {
-        public int Id { get; set; }
-        [Required]
-        public string Json { get; set; }
     }
 }

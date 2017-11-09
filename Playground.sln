@@ -1,19 +1,17 @@
 
-Microsoft Visual Studio Solution File, Format Version 15.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmitJsonLog", "EmitJsonLog\EmitJsonLog.csproj", "{3CF97540-2744-4386-A98F-72000EA0DFEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiveLogs", "ReceiveLogs\ReceiveLogs.csproj", "{1260163E-453E-4892-B165-BCEA7BE4E60B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbLogStorage", "DbLogStorage\DbLogStorage.csproj", "{8F18ACBE-8773-4F43-A7EE-D7ED2DDEBF0D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4F05FA7-52D5-4375-BC56-85C5CCC764A7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbLogStorage.Test", "DbLogStorage.Test\DbLogStorage.Test.csproj", "{4E623A2C-6A17-47D0-9764-BB1418500E90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.Api", "Archive.Api\Archive.Api.csproj", "{2571E63C-4B20-46C5-BC23-72EC7C971939}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello-Microservices", "Hello-Microservices\Hello-Microservices.csproj", "{4A8CB1A1-4A86-4608-8675-303C1CF3007D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.IntegrationTests", "Archive.IntegrationTests\Archive.IntegrationTests.csproj", "{436CB791-E07C-4AB3-9EDB-E69F3A00F1C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.UnitTests", "Archive.UnitTests\Archive.UnitTests.csproj", "{2A24ACFE-A0B1-47BF-8DDC-B0DBA70E26B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,21 +35,17 @@ Global
 		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F18ACBE-8773-4F43-A7EE-D7ED2DDEBF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F18ACBE-8773-4F43-A7EE-D7ED2DDEBF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F18ACBE-8773-4F43-A7EE-D7ED2DDEBF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F18ACBE-8773-4F43-A7EE-D7ED2DDEBF0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436CB791-E07C-4AB3-9EDB-E69F3A00F1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436CB791-E07C-4AB3-9EDB-E69F3A00F1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436CB791-E07C-4AB3-9EDB-E69F3A00F1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436CB791-E07C-4AB3-9EDB-E69F3A00F1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A24ACFE-A0B1-47BF-8DDC-B0DBA70E26B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A24ACFE-A0B1-47BF-8DDC-B0DBA70E26B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A24ACFE-A0B1-47BF-8DDC-B0DBA70E26B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A24ACFE-A0B1-47BF-8DDC-B0DBA70E26B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
