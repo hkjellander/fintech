@@ -40,13 +40,7 @@ namespace DbLogStorage.Test
             var options = new DbContextOptionsBuilder<LogContext>()
                     .UseSqlite(connection)
                     .Options;
-
-            // Create the schema in the database
-            using (var context = new LogContext(options))
-            {
-                context.Database.EnsureCreated();
-                return options;
-            }
+            return options;
         }
 
         private LogEntry GetTestData()

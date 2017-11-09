@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbLogStorage.Test", "DbLogStorage.Test\DbLogStorage.Test.csproj", "{4E623A2C-6A17-47D0-9764-BB1418500E90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.Api", "Archive.Api\Archive.Api.csproj", "{2571E63C-4B20-46C5-BC23-72EC7C971939}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello-Microservices", "Hello-Microservices\Hello-Microservices.csproj", "{4A8CB1A1-4A86-4608-8675-303C1CF3007D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,5 +45,13 @@ Global
 		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E623A2C-6A17-47D0-9764-BB1418500E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8CB1A1-4A86-4608-8675-303C1CF3007D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

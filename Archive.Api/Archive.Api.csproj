@@ -3,16 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <DebugType>portable</DebugType>
-    <AssemblyName>NancyTemplate</AssemblyName>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="1.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
   </ItemGroup>
-  
-  
+
+  <ItemGroup>
+    <Content Remove="runtimeconfig.template.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DbLogStorage\DbLogStorage.csproj" />
+  </ItemGroup>
 </Project>
