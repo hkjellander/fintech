@@ -9,6 +9,8 @@ class EmitJsonLog
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine("Press Ctrl+C terminate this program.");
+
         IConfigurationRoot config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -20,12 +22,12 @@ class EmitJsonLog
         {
             channel.ExchangeDeclare(exchange: $"{config["Exchange"]}", type: "fanout");
 
-            // Send a bunch of messages.
-            int NBR_MESSAGES = 100;
-            Console.WriteLine("Will send {0} messages", NBR_MESSAGES);
-            for (int i = 0; i < NBR_MESSAGES; i++)
+            Console.WriteLine($"Sending message to exchange '{config["Exchange"]}' " +
+                              $"at hostname: {config["Hostname"]}");
+            int counter = 0;
+            while (true)
             {
-                var message = GetMessage(i);
+                var message = GetMessage(counter++);
                 var body = Encoding.UTF8.GetBytes(message);
                 channel.BasicPublish(exchange: $"{config["Exchange"]}",
                                      routingKey: "",
@@ -34,9 +36,6 @@ class EmitJsonLog
                 Thread.Sleep(1000);
             }
         }
-
-        Console.WriteLine(" Press [enter] to exit.");
-        Console.ReadLine();
     }
 
     private static string GetMessage(int index)

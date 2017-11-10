@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace Archive.Api.Controllers
 {
@@ -10,10 +11,12 @@ namespace Archive.Api.Controllers
     public class LogController : Controller
     {
         private readonly LogContext _context;
+        private readonly ILogger _logger;
 
-        public LogController(LogContext context)
+        public LogController(LogContext context, ILogger logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         [HttpPost("/add")]
@@ -21,7 +24,7 @@ namespace Archive.Api.Controllers
         {
             _context.Logs.Add(logEntry);
             var count = _context.SaveChanges();
-            Console.WriteLine("{0} records saved to database", count);
+            _logger.LogDebug("{0} records saved to database", count);
             return CreatedAtRoute("GetLog", new { id = logEntry.Id }, logEntry);
         }
 
@@ -33,7 +36,7 @@ namespace Archive.Api.Controllers
             {
                 return NotFound();
             }
-            Console.WriteLine("Returning single log entry: " + entry.Json);
+            _logger.LogDebug("Returning log entry: " + entry.Json);
             return new ObjectResult(entry);
         }
 
@@ -41,10 +44,13 @@ namespace Archive.Api.Controllers
         public IEnumerable<LogEntry> GetAll()
         {
             IEnumerable<LogEntry> logs = _context.Logs.ToList();
-            Console.WriteLine("Got logs from database:");
-            foreach (LogEntry log in logs)
+            if (logs.Count() > 0)
             {
-                Console.WriteLine("  ID: " + log.Id + " : " + log.Json);
+                _logger.LogDebug("Got logs from database:");
+                foreach (LogEntry log in logs)
+                {
+                    _logger.LogDebug("  ID: " + log.Id + " : " + log.Json);
+                }
             }
             return logs;
         }
