@@ -8,13 +8,16 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
-    <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="runtimeconfig.template.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DbLogStorage\DbLogStorage.csproj" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
