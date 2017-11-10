@@ -2,16 +2,23 @@
 using RabbitMQ.Client;
 using System.Text;
 using System.Threading;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 class EmitJsonLog
 {
     public static void Main(string[] args)
     {
-        var factory = new ConnectionFactory() { HostName = "localhost" };
+        IConfigurationRoot config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .Build();
+
+        var factory = new ConnectionFactory() { HostName = $"{config["Hostname"]}" };
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {
-            channel.ExchangeDeclare(exchange: "logs", type: "fanout");
+            channel.ExchangeDeclare(exchange: $"{config["Exchange"]}", type: "fanout");
 
             // Send a bunch of messages.
             int NBR_MESSAGES = 100;
@@ -20,8 +27,8 @@ class EmitJsonLog
             {
                 var message = GetMessage(i);
                 var body = Encoding.UTF8.GetBytes(message);
-                channel.BasicPublish(exchange: "logs", 
-                                     routingKey: "my-key", 
+                channel.BasicPublish(exchange: $"{config["Exchange"]}",
+                                     routingKey: "",
                                      basicProperties: null, body: body);
                 Console.WriteLine(" [x] Sent {0}", message);
                 Thread.Sleep(1000);

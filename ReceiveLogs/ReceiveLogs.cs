@@ -2,38 +2,38 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 class ReceiveLogs
 {
     public static int Main(string[] args)
     {
-        if (args.Length != 1)
-        {
-            Console.Error.WriteLine("Usage: {0} <id>", Environment.GetCommandLineArgs()[0]);
-            Console.Error.WriteLine("Where the id argument is mandatory.");
-            return 1;
-        }
-        var id = args[0];
-        var factory = new ConnectionFactory() { HostName = "localhost" };
+        IConfigurationRoot config = new ConfigurationBuilder()
+           .SetBasePath(Directory.GetCurrentDirectory())
+           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .Build();
+
+        var factory = new ConnectionFactory() { HostName = $"{config["Hostname"]}" };
 
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {
-            channel.ExchangeDeclare(exchange: "logs",
+            channel.ExchangeDeclare(exchange: $"{config["Exchange"]}",
                                     type: "fanout");
             bool durable = true;
             bool exclusive = false;
             bool autoDelete = false;
-            var queue = channel.QueueDeclare("my-queue-" + id,
+            var queue = channel.QueueDeclare($"{config["Queue"]}",
                                              durable, exclusive,
                                              autoDelete, null);
-                                        
+
             var queueName = queue.QueueName;
             channel.QueueBind(queue: queueName,
-                              exchange: "logs",
-                              routingKey: "my-key");
+                              exchange: $"{config["Exchange"]}",
+                              routingKey: "");
 
-            Console.WriteLine(" [*] ID: {0} Waiting for messages.", id);
+            Console.WriteLine(" [*] Waiting for messages.");
 
             var consumer = new EventingBasicConsumer(channel);
             consumer.Received += (model, ea) =>
