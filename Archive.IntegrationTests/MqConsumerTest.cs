@@ -12,7 +12,8 @@ namespace Archive.IntegrationTests
 {
     public class MqConsumerTest
     {
-        [Fact]
+        // This test is not meant to run in automation, but was only used for debugging.
+        //[Fact]
         public void TestMQ()
         {
             ILogger<MqConsumer> logger = LogUtil<MqConsumer>.GetLogger();
