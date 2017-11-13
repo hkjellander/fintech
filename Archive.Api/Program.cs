@@ -27,7 +27,7 @@ namespace Archive.Api
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {
-                    logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                    logging.AddConfiguration(hostingContext.Configuration.GetSection("LoggingSettings"));
                     logging.AddConsole();
                     logging.AddDebug();
                 })

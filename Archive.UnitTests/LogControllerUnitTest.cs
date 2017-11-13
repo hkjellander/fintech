@@ -1,15 +1,17 @@
 ﻿using Archive.Api.Controllers;
 using Archive.Api.Models;
+using Archive.Test.Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace Archive.IntegrationTests
+namespace Archive.UnitTests
 {
-    public class LogControllerIntegrationTest
+    public class LogControllerUnitTest
     {
         [Fact]
         public void GetAllReturnsTwoObjects()
@@ -17,7 +19,8 @@ namespace Archive.IntegrationTests
             // Arrange
             var mockContext = new Mock<LogContext>();
             mockContext.Setup(db => db.Logs).Returns(MockDbSet(GetTestData()));
-            var controller = new LogController(mockContext.Object);
+            ILogger<LogController> logger = LogUtil<LogController>.GetLogger();
+            var controller = new LogController(mockContext.Object, logger);
 
             // Act
             var logs = controller.GetAll();
