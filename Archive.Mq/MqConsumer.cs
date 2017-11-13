@@ -42,7 +42,7 @@ namespace Archive.Mq
                 {
                     channel.ExchangeDeclare(exchange: _config.Exchange,
                                             type: "fanout");
-                    _logger.LogDebug("Declared exchange: {0}", _config.Exchange);
+                    _logger.LogDebug("Declared exchange '{0}'", _config.Exchange);
 
                     bool durable = true;
                     bool exclusive = false;
@@ -51,12 +51,12 @@ namespace Archive.Mq
                                                      durable, exclusive,
                                                      autoDelete, null);
                     var queueName = queue.QueueName;
-                    _logger.LogDebug("Declared queue: {0}", queueName);
+                    _logger.LogDebug("Declared queue '{0}'", queueName);
 
                     channel.QueueBind(queue: queueName,
                                       exchange: _config.Exchange,
                                       routingKey: "");
-                    _logger.LogDebug(" [*] Bind to queue {0} from exchange at {1}.",
+                    _logger.LogDebug(" [*] Bind to queue '{0}' from exchange '{1}'",
                                      queueName, _config.Exchange);
 
                     var consumer = new EventingBasicConsumer(channel);
