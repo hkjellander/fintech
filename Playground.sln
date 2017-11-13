@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmitJsonLog", "EmitJsonLog\EmitJsonLog.csproj", "{3CF97540-2744-4386-A98F-72000EA0DFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.Mq", "ReceiveLogs\Archive.Mq.csproj", "{1260163E-453E-4892-B165-BCEA7BE4E60B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4F05FA7-52D5-4375-BC56-85C5CCC764A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.Api", "Archive.Api\Archive.Api.csproj", "{2571E63C-4B20-46C5-BC23-72EC7C971939}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.UnitTests", "Archive.UnitTests\Archive.UnitTests.csproj", "{2A24ACFE-A0B1-47BF-8DDC-B0DBA70E26B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.Mq", "Archive.Mq\Archive.Mq.csproj", "{4E2BDDEA-1875-4356-AABA-78C8E41E2434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archive.Test.Common", "Archive.Test.Common\Archive.Test.Common.csproj", "{C9AA5318-7403-4F9E-B43D-58024D638800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{3CF97540-2744-4386-A98F-72000EA0DFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CF97540-2744-4386-A98F-72000EA0DFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CF97540-2744-4386-A98F-72000EA0DFEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1260163E-453E-4892-B165-BCEA7BE4E60B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2571E63C-4B20-46C5-BC23-72EC7C971939}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,5 +49,9 @@ Global
 		{4E2BDDEA-1875-4356-AABA-78C8E41E2434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E2BDDEA-1875-4356-AABA-78C8E41E2434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E2BDDEA-1875-4356-AABA-78C8E41E2434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9AA5318-7403-4F9E-B43D-58024D638800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9AA5318-7403-4F9E-B43D-58024D638800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9AA5318-7403-4F9E-B43D-58024D638800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9AA5318-7403-4F9E-B43D-58024D638800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

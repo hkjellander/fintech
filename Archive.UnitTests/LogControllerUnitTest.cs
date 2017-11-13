@@ -1,16 +1,17 @@
 ﻿using Archive.Api.Controllers;
 using Archive.Api.Models;
-using Archive.IntegrationTests.Util;
+using Archive.Test.Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace Archive.IntegrationTests
+namespace Archive.UnitTests
 {
-    public class LogControllerIntegrationTest
+    public class LogControllerUnitTest
     {
         [Fact]
         public void GetAllReturnsTwoObjects()

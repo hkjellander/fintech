@@ -1,5 +1,5 @@
-﻿using Archive.IntegrationTests.Util;
-using Archive.Mq;
+﻿using Archive.Mq;
+using Archive.Test.Common;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;

@@ -1,12 +1,10 @@
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
-namespace Archive.IntegrationTests.Util
+namespace Archive.Test.Common
 {
     public class LogUtil<T>
     {
-        public static ILogger<T> GetLogger() 
+        public static ILogger<T> GetLogger()
         {
             ILoggerFactory loggerFactory = new LoggerFactory()
                 .AddConsole(LogLevel.Trace);
