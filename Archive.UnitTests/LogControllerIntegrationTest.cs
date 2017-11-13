@@ -1,5 +1,6 @@
 ﻿using Archive.Api.Controllers;
 using Archive.Api.Models;
+using Archive.IntegrationTests.Util;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Newtonsoft.Json;
@@ -17,7 +18,8 @@ namespace Archive.IntegrationTests
             // Arrange
             var mockContext = new Mock<LogContext>();
             mockContext.Setup(db => db.Logs).Returns(MockDbSet(GetTestData()));
-            var controller = new LogController(mockContext.Object);
+            ILogger<LogController> logger = LogUtil<LogController>.GetLogger();
+            var controller = new LogController(mockContext.Object, logger);
 
             // Act
             var logs = controller.GetAll();
