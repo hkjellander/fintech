@@ -31,6 +31,7 @@ namespace Archive.Api
                     logging.AddConsole();
                     logging.AddDebug();
                 })
+                .UseSetting(WebHostDefaults.DetailedErrorsKey, "true")
                 .UseStartup<Startup>()
                 .Build();
 
