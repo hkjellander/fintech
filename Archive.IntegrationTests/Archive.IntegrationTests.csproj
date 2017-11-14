@@ -17,4 +17,9 @@
     <ProjectReference Include="..\Archive.Api\Archive.Api.csproj" />
     <ProjectReference Include="..\Archive.Test.Common\Archive.Test.Common.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
