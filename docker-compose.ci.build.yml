@@ -1,0 +1,9 @@
+﻿version: '3'
+
+services:
+  ci-build:
+    image: gocd-agent-debian-8-dotnet-2.0.2 
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: /bin/bash -c "dotnet publish  ./Playground.sln -c Release -o ./obj/Docker/publish"

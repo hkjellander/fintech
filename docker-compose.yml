@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  archive.api:
+    image: archivelogs/api:${TAG:-latest}
+    build:
+        context: ./Archive.Api
+        dockerfile: Dockerfile
+    depends_on:
+      - sql.data
+      - rabbitmq
+
+  sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
+
+  rabbitmq:
+    image: rabbitmq:3-management
