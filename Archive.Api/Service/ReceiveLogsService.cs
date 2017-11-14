@@ -12,7 +12,7 @@ namespace Archive.Api.Service
     class ReceiveLogsService : HostedService
     {
         private readonly IMessageConsumer _messageConsumer;
-        private readonly ILogger _logger;
+        private readonly ILogger<ReceiveLogsService> _logger;
 
         public ReceiveLogsService(IMessageConsumer messageConsumer,
                                   ILogger<ReceiveLogsService> logger)

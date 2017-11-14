@@ -11,7 +11,7 @@ namespace Archive.Mq
 {
     public class MqConsumer : IMessageConsumer
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<MqConsumer> _logger;
         private readonly IConnectionFactory _connectionFactory;
         private readonly RabbitMQSettings _config;
 

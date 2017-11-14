@@ -11,9 +11,9 @@ namespace Archive.Api.Controllers
     public class LogController : Controller
     {
         private readonly LogContext _context;
-        private readonly ILogger _logger;
+        private readonly ILogger<LogController> _logger;
 
-        public LogController(LogContext context, ILogger logger)
+        public LogController(LogContext context, ILogger<LogController> logger)
         {
             _context = context;
             _logger = logger;
